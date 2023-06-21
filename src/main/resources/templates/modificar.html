@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Datos de la persona</title>
+</head>
+<body>
+    <h1>Datos de la persona</h1>
+    <a th:href="@{/}">Regresar</a>
+
+    <br>
+
+   <!--El form lleva en su accion el objeto persona--> 
+
+    <form th:action="@{/guardar}" method="post" th:object="${persona}">
+ 
+    <!--Aun no habiamos especificado el idPersona de los objetos persona, para hacerlo lo haremos de la misma manera, con el th:field se lo asignamos a un valor pero en un input hidden ⬇ *Los valores se asignan con asterisco * los objetos con $ dollar y las direcciones con @ at sign *-->
+
+        <input type="hidden" name="idPersona" th:field="*{idPersona}"/>
+        
+    
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" th:field="*{nombre}">
+
+        <label for="nombre">Apellido</label>
+        <input type="text" name="apellido" th:field="*{apellido}">
+
+        <label for="nombre">Email</label>
+        <input type="text" name="email" th:field="*{email}">
+
+        <label for="nombre">Telefono</label>
+        <input type="text" name="telefono" th:field="*{telefono}">
+
+        <br>
+
+        <input type="submit" name="guardar" value="Guardar">
+
+    </form>
+</body>
+</html>

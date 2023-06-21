@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>INICIO</title>
+        <a th:href="@{/agregar}">Crear Persona</a>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Inicio</h1>
+        
+        <br>
+        
+        <div th:if="${personas != null and !personas.empty}">
+            <table border ="1">
+                <tr>
+                    <th>nombre:</th>
+                    <th>apellido:</th>
+                    <th>email:</th>
+                    <th>telefono:</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+
+
+                <tr th:each="persona : ${personas}">
+                    <td th:text="${persona.nombre}"></td>
+                    <td th:text="${persona.apellido}"></td>
+                    <td th:text="${persona.email}"></td>
+                    <td th:text="${persona.telefono}"></td>
+                    <!--Aca abajo esta un path variable que es la sintaxis que vamos a usar en thymeleaf para ediar especificamente la persona con este id y @editar el path se le puede concatenar o pasar por query params ej editar / y el id de lo que queremos modificar  +-->
+                    <td><a th:href="@{/editar/} + ${persona.idPersona}" th:text="Editar"></a></td>
+                    <!--Esta es la diferencia entre pathtype y queryparams ↕ -->
+                    <td><a th:href="@{/eliminar(idPersona=${persona.idPersona})}" th:text="Eliminar"></a></td>
+                </tr>
+            </table> 
+        </div>
+           <div th:if="${personas == null or personas.empty}">
+               La lista esta vacia
+           </div>
+
+    </body>
+</html>
