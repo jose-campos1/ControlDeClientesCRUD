@@ -1,6 +1,6 @@
-![arquitectura-spring](https://github.com/jose-campos1/ControlDeClientesCRUD/assets/106594685/f13eba2a-a5df-41ae-ba64-1dda41d35aaf)
-
 # CRUD Sring / MySql
+
+![arquitectura-spring](https://github.com/jose-campos1/ControlDeClientesCRUD/assets/106594685/f13eba2a-a5df-41ae-ba64-1dda41d35aaf)
 
 # Index
  * [CRUD Person Service](https://github.com/jose-campos1/ControlDeClientesCRUD/blob/main/src/main/java/vzla/revo/revo/personaService/PersonaService.java)
